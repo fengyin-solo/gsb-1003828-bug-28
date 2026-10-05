@@ -316,13 +316,14 @@ export const SEED_ROWS: Record<string, EntryRow[]> = {
       "status": "绘制中",
       "pending": true,
       "abnormal": false,
+      "版本": 1,
       "图纸编号": "DRAW-0001",
       "绘图对象": "实测绘图样例1",
       "绘图类型": "实测绘图样例1",
       "比例尺": "实测绘图样例1",
       "绘图人": "实测绘图样例1",
-      "校核人": "实测绘图样例1",
-      "完成日期": "2026-09-01",
+      "校核人": "",
+      "完成日期": "",
       "图纸状态": "实测绘图样例1"
     },
     {
@@ -330,6 +331,7 @@ export const SEED_ROWS: Record<string, EntryRow[]> = {
       "status": "待校核",
       "pending": true,
       "abnormal": true,
+      "版本": 1,
       "图纸编号": "DRAW-0002",
       "绘图对象": "实测绘图样例2",
       "绘图类型": "实测绘图样例2",
@@ -344,6 +346,7 @@ export const SEED_ROWS: Record<string, EntryRow[]> = {
       "status": "已校核",
       "pending": false,
       "abnormal": false,
+      "版本": 2,
       "图纸编号": "DRAW-0003",
       "绘图对象": "实测绘图样例3",
       "绘图类型": "实测绘图样例3",
@@ -352,6 +355,21 @@ export const SEED_ROWS: Record<string, EntryRow[]> = {
       "校核人": "实测绘图样例3",
       "完成日期": "2026-09-03",
       "图纸状态": "实测绘图样例3"
+    },
+    {
+      "id": 4,
+      "status": "已数字化",
+      "pending": false,
+      "abnormal": false,
+      "版本": 3,
+      "图纸编号": "DRAW-0004",
+      "绘图对象": "实测绘图样例4",
+      "绘图类型": "实测绘图样例4",
+      "比例尺": "实测绘图样例4",
+      "绘图人": "实测绘图样例4",
+      "校核人": "实测绘图样例4",
+      "完成日期": "2026-09-04",
+      "图纸状态": "实测绘图样例4"
     }
   ],
   "diary": [

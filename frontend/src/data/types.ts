@@ -17,7 +17,19 @@ export type ModuleMeta = {
   statuses: string[]
   actions: string[]
   actionTargets: Record<string, string>
+  // 动作允许的前置状态：登记了的动作只有在当前状态命中时才放行，其余入口直接拒绝。
+  actionSources?: Record<string, string[]>
   metrics: string[]
+}
+
+// 实测图纸的版本留档：每次退回/确认都把当时整行快照追加进来，原图永不覆盖。
+export type DrawingVersion = {
+  drawingId: number
+  drawingNo: string
+  version: number
+  action: string
+  savedAt: string
+  snapshot: EntryRow
 }
 
 export type PageResult = {
