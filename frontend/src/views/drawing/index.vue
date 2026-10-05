@@ -85,13 +85,17 @@ const meta = moduleMeta('drawing')
 const columns = ["图纸编号", "绘图对象", "绘图类型", "比例尺", "绘图人", "校核人", "完成日期", "图纸状态"]
 const actions = ["提交校核", "确认校核", "退回修改"]
 const statuses = ["绘制中", "待校核", "已校核", "已数字化", "需修改"]
-const stats = [{"label": "图纸总数", "value": 0}, {"label": "已校核数", "value": 0}, {"label": "待校核数", "value": 0}]
 
 const rows = ref<EntryRow[]>([])
 const total = ref(0)
 const errorMessage = ref('')
 const filters = ref<Record<string, string>>({})
 const filterFields = columns.slice(0, 3)
+const stats = computed(() => [
+  { label: '图纸总数', value: rows.value.length },
+  { label: '已校核数', value: rows.value.filter((row) => String(row.status) === '已校核').length },
+  { label: '待校核数', value: rows.value.filter((row) => String(row.status) === '待校核').length },
+])
 const statusSummary = computed(() =>
   statuses.map((status: string) => ({
     status,

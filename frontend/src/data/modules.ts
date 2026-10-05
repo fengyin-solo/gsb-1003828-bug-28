@@ -88,6 +88,10 @@ export const MODULES: ModuleMeta[] = [
     statuses: ["绘制中", "待校核", "已校核", "已数字化", "需修改"],
     actions: ["提交校核", "确认校核", "退回修改"],
     actionTargets: {"提交校核": "待校核", "确认校核": "已校核", "退回修改": "需修改"},
+    actionSources: {"提交校核": ["绘制中", "需修改"], "确认校核": ["待校核"], "退回修改": ["待校核"]},
+    finalStatuses: ["已校核", "已数字化"],
+    codeField: "图纸编号",
+    review: {"personField": "校核人", "dateField": "完成日期", "confirmAction": "确认校核", "clearActions": ["提交校核", "退回修改"]},
     metrics: ["图纸总数", "已校核数", "待校核数"],
   },
   {
